@@ -1,0 +1,48 @@
+.graph-wrapper {
+    height: calc( 70vh + 20vw );
+}
+.data-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items:stretch;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin:0.5rem;
+    background-image: linear-gradient(180deg, rgb(1, 42, 0), rgb(1, 0, 42));
+    border-radius:3rem 3rem 3rem 3rem;
+    color: rgb(253, 255, 254);
+    padding:1rem;
+
+}
+
+.Delta-stats{
+    display: flex;
+    flex-direction: row;
+    align-items:stretch;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border:0.1rem solid rgb(255, 0, 0);
+    border-radius: 1.5rem;
+    box-shadow: 0 0 0.3rem 0rem rgb(255, 6, 6);
+    background:#3f0000;
+}
+h7 {
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-bottom: 8rem;
+}
+.Covid-stats{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding:1rem;
+    width: calc( 14vh + 8vw );
+    background:transparent;
+    margin:0.8rem ;
+    border:0.1rem solid rgb(0, 140, 255);
+    box-shadow: 0 0 0.5rem 0rem rgb(0, 225, 255);
+    border-radius: 1rem;
+    text-shadow: 2px 4px 2px #0044ff;
+    font-size: calc( 1.4vh + 0.6vw );
+}
+
