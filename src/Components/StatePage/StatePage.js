@@ -6,33 +6,45 @@ import { Line } from "react-chartjs-2";
 function StatePage(props) {
 	const stateName = props.match.params.stateName;
 	const loadedData = useSelector((state) => state.loadedData);
-	let districtArray = [];
+	let districtArray = [],
+		confirmedArray = [],
+		recoveredArray = [],
+		deceasedArray = [];
 	if (loadedData ? loadedData[stateName] : null) {
 		districtArray = Object.keys(loadedData[stateName].districtData);
+		districtArray.map((district, index) => {
+			confirmedArray[index] =
+				loadedData[stateName].districtData[district].confirmed;
+			recoveredArray[index] =
+				loadedData[stateName].districtData[district].recovered;
+			deceasedArray[index] =
+				loadedData[stateName].districtData[district].deceased;
+			console.log();
+		});
 	}
 	// console.log(districtArray);
 
 	const config = {
-		labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+		labels: districtArray,
 		datasets: [
 			{
-				label: "First dataset",
-				data: [33, 53, 85, 41, 44, 65],
-				fill: true,
-				backgroundColor: "rgba(75,192,192,0.2)",
-				borderColor: "rgba(75,192,192,1)",
+				label: "Confirmed",
+				data: confirmedArray,
+				fill: false,
+				backgroundColor: "rgb(75,255,1)",
+				borderColor: "#0000ff",
 			},
 			{
-				label: "Second dataset",
-				data: [33, 25, 35, 51, 54, 76],
+				label: "Recovered",
+				data: recoveredArray,
 				fill: false,
-				borderColor: "#742774",
+				borderColor: "#00FF00",
 			},
 			{
-				label: "dataset",
-				data: [33, 25, 35, 51, 54, 76],
+				label: "Deceased",
+				data: deceasedArray,
 				fill: false,
-				borderColor: "#742774",
+				borderColor: "#FF0000",
 			},
 		],
 	};
@@ -40,9 +52,7 @@ function StatePage(props) {
 	return (
 		<>
 			<h1>{props.match.params.stateName}</h1>
-			<div className='graph-wrapper'>
-				<Line data={config} />
-			</div>
+			<Line data={config} />
 			<DistrictList data={districtArray} stateName={stateName} />
 		</>
 	);

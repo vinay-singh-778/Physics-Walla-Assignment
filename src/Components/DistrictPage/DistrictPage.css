@@ -31,6 +31,10 @@ h7 {
     padding-left: 1rem;
     padding-bottom: 8rem;
 }
+h1{
+   font-family: Georgia, 'Times New Roman', Times, serif; 
+   font-weight: bold;
+}
 .Covid-stats{
     display: flex;
     justify-content: space-around;
