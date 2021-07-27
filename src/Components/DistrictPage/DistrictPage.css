@@ -1,6 +1,4 @@
-.graph-wrapper {
-    height: calc( 70vh + 20vw );
-}
+
 .data-wrapper{
     display: flex;
     flex-direction: row;
@@ -26,7 +24,7 @@
     box-shadow: 0 0 0.3rem 0rem rgb(255, 6, 6);
     background:#3f0000;
 }
-h7 {
+h7{
     padding-top: 2rem;
     padding-left: 1rem;
     padding-bottom: 8rem;
