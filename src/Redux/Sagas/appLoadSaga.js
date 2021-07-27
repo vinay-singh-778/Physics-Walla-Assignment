@@ -10,6 +10,7 @@ export function* CallWorkbook(action) {
             url: API_URL,
           });
         yield put(APP_LOAD_SUCCESS(response.data));
+        alert("hello data is coming from API check using Redux-devtools extension");
     }
     catch(error){
         yield put(APP_LOAD_FAIL(error));
